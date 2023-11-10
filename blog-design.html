@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design-Task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 18px;
+        }
+
+        .container {
+            width: 88%;
+            margin: 0 auto;
+        }
+
+        .text-blue {
+            color: rgb(0, 119, 255);
+        }
+
+        .text-black {
+            color: black;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .clear-both {
+            clear: both;
+        }
+
+        .text-grey {
+            color: grey;
+        }
+
+        .text-green {
+            color: rgb(83, 183, 104);
+        }
+
+        /* header section start */
+        header {
+            padding: 14px 0;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .signup_button {
+            padding: 8px 12px;
+            margin-left: 10px;
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 3px;
+            color: grey;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .w-33 {
+            width: 33.33%;
+        }
+
+        header h2 {
+            font-size: 40px;
+        }
+
+        header i {
+            font-size: 18px;
+            padding-top: 16px;
+        }
+
+        .fs-22 {
+            font-size: 22px;
+            padding-top: 10px;
+        }
+
+        /* header section end */
+
+        /* menu list section start */
+        .menu_list {
+            padding-left: 8px;
+        }
+
+        .menu_list article {
+            float: left;
+            font-size: 21px;
+            width: 8.7%;
+            padding: 10px 0px;
+        }
+
+        .w-4 {
+            width: 3% !important;
+        }
+
+        .w-6 {
+            width: 6% !important;
+        }
+
+        .w-11 {
+            width: 11% !important;
+        }
+
+        .menu_list article a {
+            color: grey;
+        }
+
+        /* menu_list section end */
+
+        /* banner section start */
+        .banner_sec {
+            background-color: rgb(52, 58, 64);
+            color: white;
+            padding: 50px;
+        }
+
+        .banner_sec h2 {
+            font-size: 60px;
+            font-style: italic;
+        }
+
+        .banner_sec article {
+            margin: 24px 0;
+        }
+
+        .banner_sec article p {
+            line-height: 30px;
+            font-size: 26px;
+        }
+
+        .font-reading {
+            font-size: 25px;
+        }
+
+        /* banner section end */
+
+        /* box_posr section start */
+        .box_postsec1 {
+            margin-top: 40px;
+            box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 6px 0px;
+            border-radius: 5px;
+        }
+
+        .box_postsec1 h4 {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .box_postsec1 p {
+            font-size: 20px;
+            margin: 5px 0px 10px 0px;
+        }
+
+        .w-50 {
+            width: 48.5%;
+        }
+
+        .w-60 {
+            width: 62%;
+        }
+
+        .w-40 {
+            width: 38%;
+            background-color: rgb(85, 89, 92);
+            padding: 133px 0;
+            color: white;
+            font-size: 24px;
+            font-family: sans-serif;
+        }
+
+        .p-20 {
+            padding: 35px;
+        }
+
+        .ms-38 {
+            margin-right: 3%;
+        }
+
+        .mt-22 {
+            margin-top: 22px;
+        }
+
+        .font_size {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+
+        /* box_posr section end */
+
+        /* blog_postsec1 part start */
+        .blog_postsec1 {
+            float: left;
+            width: 63%;
+        }
+
+        .blog_postsec1 h4 {
+            font-size: 35px;
+            padding: 50px 0 30px 0;
+            font-weight: bold;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .blog_postsec1 h2 {
+            font-size: 50px;
+            padding: 20px 0 6px 0;
+        }
+
+        .blog_postsec1 h3 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .blog_postsec1 h5 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .blog_postsec1 p {
+            margin-bottom: 20px;
+        }
+
+        .blog_postsec1 ul {
+            margin-left: 40px;
+        }
+
+        .blog_postsec1 button {
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid lightgrey;
+            color: rgb(154, 154, 154);
+            background-color: white;
+            margin-top: 50px;
+        }
+
+        .btn_active {
+            border: 1px solid rgb(6, 122, 255) !important;
+            color: rgb(6, 122, 255) !important;
+        }
+
+        .blog_postsec1 ol {
+            margin-left: 40px;
+            margin-bottom: 15px;
+        }
+
+        .mar-top {
+            margin-top: 20px;
+        }
+
+        .bottom_line {
+            padding: 20px 0;
+            border-bottom: 1px solid lightgrey;
+            margin-bottom: 15px;
+        }
+
+        /* blog_postsec1 part end */
+
+        /* blog_postsec2 part start */
+        .blog_postsec2 {
+            float: left;
+            width: 34%;
+            margin-left: 3%;
+        }
+
+        .about_boxsection h3,
+        .archive_sec h3,
+        .Elsewhere_sec h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .about_boxsection {
+            margin: 40px 0 20px 0;
+            padding: 40px;
+            background-color: rgb(248, 249, 250);
+            border-radius: 5px;
+        }
+
+        .archive_sec,
+        .Elsewhere_sec {
+            padding: 20px;
+        }
+
+        .archive_sec a,
+        .Elsewhere_sec a {
+            color: rgb(6, 122, 255);
+            cursor: pointer;
+        }
+
+        .archive_sec article,
+        .Elsewhere_sec article {
+            margin: 8px 0;
+        }
+
+        /* blog_postsec2 part end */
+
+        /* footer part start */
+        footer {
+            background-color: rgb(249, 249, 249);
+            padding: 30px 0;
+        }
+
+        /* footer part end */
+        
+        .menu_mobile{display: none;padding-left: 0px;}
+        .menu_mobile details{
+            padding:10px 0px;
+        }
+        .menu_mobile summary{
+            background-color:lightgray;padding:5px 0px;
+        }
+        .menuTable{width: 100%;}
+        .menuTable td{width:25%;}
+        
+
+        /* media query start  */
+        @media screen and (min-width: 320px) and (max-width:400px) {
+            .container {
+                width: 90%;
+            }
+
+            /* header section start */
+            .fs-22 {
+                font-size: 16px;
+            }
+
+            header h2 {
+                font-size: 30px;
+            }
+
+            header i {
+                font-size: 15px;
+                padding-top: 10px;
+            }
+
+            .signup_button {
+                padding: 6px 8px;
+                margin-left: 5px;
+                font-size: 12px;
+            }
+
+            /* header section end */
+
+            /* menu list section start */
+            .menu_list {
+                padding-left: 5px;
+            }
+
+            .menu_list article {
+                float: left;
+                font-size: 21px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            .w-4 {
+                width: 100% !important;
+            }
+
+            .w-6 {
+                width: 100% !important;
+            }
+
+            .w-11 {
+                width: 100% !important;
+            }
+
+            /* menu_list section end */
+
+            /* banner section start */
+            .banner_sec {
+                padding: 30px;
+            }
+
+            .banner_sec h2 {
+                font-size: 30px;
+                
+            }
+
+            .banner_sec article p {
+                font-size: 16px;
+            }
+
+            .font-reading {
+                font-size: 18px;
+            }
+
+            /* banner section end */
+
+            /* box_posr section start */
+            .box_postsec1 h4 {
+                font-size: 20px;
+            }
+
+            .box_postsec1 p {
+                font-size: 15px;
+            }
+
+            .w-50 {
+                width: 100%;
+            }
+
+            .w-40 {
+                padding: 124px 0;
+                font-size: 18px;
+            }
+
+            .p-20 {
+                padding: 25px;
+            }
+
+            .ms-38 {
+                margin-right: 0px;
+            }
+
+            .mt-22 {
+                margin-top: 22px;
+            }
+
+            /* box_posr section end */
+
+            /* blog_postsec1 part start */
+            .blog_postsec1 {
+                float: none;
+                width: 100%;
+            }
+
+            .blog_postsec1 h2 {
+                font-size: 50px;
+                padding: 20px 0 6px 0;
+                text-align: center;
+            }
+
+            /* blog_postsec1 part end */
+
+            /* blog_postsec2 part start */
+            .blog_postsec2 {
+                float: none;
+                width: 100%;
+                margin-left: 0%;
+            }
+
+            /* blog_postsec2 part end */
+
+            .menu_mobile{display: block;}
+            .menu_desktop{display: none;}
+        }
+
+        @media screen and (min-width: 401px) and (max-width:768px) {
+            .container {
+                width: 90%;
+            }
+
+            /* menu list section start */
+            .menu_list article {
+                float: left;
+                font-size: 21px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            .w-4 {
+                width: 100% !important;
+            }
+
+            .w-6 {
+                width: 100% !important;
+            }
+
+            .w-11 {
+                width: 100% !important;
+            }
+
+            /* menu_list section end */
+
+            /* banner section start */
+            .banner_sec {
+                padding: 30px;
+            }
+
+            .banner_sec h2 {
+                font-size: 34px;
+            }
+
+            .banner_sec article p {
+                font-size: 16px;
+            }
+
+            .font-reading {
+                font-size: 18px;
+            }
+
+            /* banner section end */
+
+            /* box_posr section start */
+            .box_postsec1 h4 {
+                font-size: 20px;
+            }
+
+            .box_postsec1 p {
+                font-size: 15px;
+            }
+
+            .w-50 {
+                width: 100%;
+            }
+
+            .w-40 {
+                padding: 124px 0;
+                font-size: 18px;
+            }
+
+            .p-20 {
+                padding: 25px;
+            }
+
+            .ms-38 {
+                margin-right: 0px;
+            }
+
+            .mt-22 {
+                margin-top: 22px;
+            }
+
+            /* box_posr section end */
+
+            .menu_mobile{display: block;}
+            .menu_desktop{display: none;}
+        }
+
+        @media screen and (min-width: 769px) and (max-width:1024px) {
+            .container {
+                width: 95%;
+            }
+
+            /* menu list section start */
+            .menu_list {
+                padding-left: 6px;
+            }
+
+            .menu_list article {
+                float: left;
+                font-size: 16px;
+                width: 8.5%;
+                padding: 10px 0px;
+            }
+
+            .w-4 {
+                width: 4% !important;
+            }
+
+            .w-6 {
+                width: 6% !important;
+            }
+
+            .w-11 {
+                width: 12% !important;
+            }
+
+            /* menu_list section end */
+
+            /* box_posr section start */
+            .box_postsec1 h4 {
+                font-size: 26px;
+            }
+
+            .box_postsec1 p {
+                font-size: 15px;
+            }
+
+            /* box_posr section end */
+        }
+
+        /* media query end  */
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <!-- header section start -->
+        <header>
+            <section class="float-left w-33 text-grey fs-22">Subscribe</section>
+            <section class="float-left w-33 text-center">
+                <h2>Large</h2>
+            </section>
+            <section class="float-left w-33 text-right">
+                <i class="fa-solid fa-magnifying-glass text-grey"></i>
+                <input type="button" class="signup_button" value="Sign up" />
+            </section>
+            <section class="clear-both"></section>
+        </header>
+
+        <!-- header section end -->
+
+        <!-- menu_list section start -->
+        <section class="menu_list menu_desktop">
+            <article><a href="">World</a></article>
+            <article class="w-6"><a href="">U.S.</a></article>
+            <article class="w-11"><a href="">Technology</a></article>
+            <article><a href="">Design</a></article>
+            <article><a href="">Culture</a></article>
+            <article><a href="">Business</a></article>
+            <article><a href="">Politics</a></article>
+            <article><a href="">Opinion</a></article>
+            <article><a href="">Science</a></article>
+            <article><a href="">Health</a></article>
+            <article><a href="">Style</a></article>
+            <article class="w-4"><a href="">Travel</a></article>
+
+            <section class="clear-both"></section>
+        </section>
+        <!-- menu_list section end -->
+
+        <!-- menu_list section for mobile start here -->
+        <section class="menu_list menu_mobile">
+            <details>
+                <summary>Menus</summary>
+                <section>
+                    <table class="menuTable">
+                        <tr>
+                            <td><article><a href="">World</a></article></td>
+                            <td><article class=""><a href="">U.S.</a></article></td>
+                            <td><article class=""><a href="">Technology</a></article></td>
+                            <td><article><a href="">Design</a></article></td>
+                        </tr>
+                        <tr>
+                            <td><article><a href="">Culture</a></article></td>
+                            <td><article class=""><a href="">Business</a></article></td>
+                            <td><article class=""><a href="">Politics</a></article></td>
+                            <td><article><a href="">Opinion</a></article></td>
+                        </tr>
+                        <tr>
+                            <td><article><a href="">Science</a></article></td>
+                            <td><article class=""><a href="">Health</a></article></td>
+                            <td><article class=""><a href="">Style</a></article></td>
+                            <td><article><a href="">Travel</a></article></td>
+                        </tr>                        
+                    </table>            
+                </section>
+            </details>
+            
+
+
+        </section>
+        <!-- menu_list section for mobile end here -->
+
+        <!-- Bannner section start -->
+        <section class="banner_sec">
+            <h2>Title of a longer </h2>
+            <h2>featured blog post </h2>
+            <article>
+                <p>Multiple lines of text that form the lede, informing new</p>
+                <p>readers quickly and efficiently about what's most interesting</p>
+                <p>in this post's contents.</p>
+            </article>
+            <article class="font-reading">Continue Reading...</article>
+
+        </section>
+        <!-- Bannner section end -->
+
+        <!-- box section start -->
+        <section>
+            <section class="box_postsec1 float-left w-50 ms-38">
+                <article class="float-left w-60 p-20">
+                    <article class="text-blue font_size">World</article>
+                    <h4>Featured Post</h4>
+                    <p class="text-grey">Nov 12</p>
+                    <p>
+                        This is a wider card with supporting text
+                        below as a natural lead-in to additional content.
+                    </p>
+                    <article class="text-blue mt-22">Continue reading</article>
+                </article>
+                <article class="float-left text-center w-40">
+                    Thumbnail
+                </article>
+            </section>
+            <section class="box_postsec1 float-left w-50">
+                <article class="float-left w-60 p-20">
+                    <article class="text-green font_size">Design</article>
+                    <h4>Post Title</h4>
+                    <p class="text-grey">Nov 11</p>
+                    <p>
+                        This is a wider card with supporting text
+                        below as a natural lead-in to additional content.
+                    </p>
+                    <article class="text-blue mt-22">Continue reading</article>
+                </article>
+                <article class="float-left text-center w-40">
+                    Thumbnail
+                </article>
+            </section>
+        </section>
+        <!-- box section end -->
+
+        <section class="clear-both"></section>
+
+        <!-- blog post section start here -->
+        <summary>
+            <section class="blog_postsec1">
+                <h4>From the Firehose</h4>
+                <h2>Sample blog post</h2>
+                <span class="text-grey">January 1, 2014 by </span><a href="" class="text-blue">Mark</a>
+                <p class="bottom_line">
+                    This blog post shows a few different types of content that’s supported and styled with Bootstrap.
+                    Basic typography, images, and code are all supported.
+                </p>
+                <p>
+                    Cum sociis natoque penatibus et magnis <a href="" class="text-blue">dis parturient montes</a>,
+                    nascetur ridiculus mus. Aenean eu
+                    leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est
+                    at lobortis. Cras mattis consectetur purus sit amet fermentum.
+                </p>
+                <p>
+                    Curabitur blandit tempus porttitor. <span class="text-black">Nullam quis risus eget urna
+                        mollis</span> ornare vel eu leo. Nullam id
+                    dolor id nibh ultricies vehicula ut id elit.
+                </p>
+                <p>
+                    Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet
+                    fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                </p>
+                <h3>Heading</h3>
+                <p>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo
+                    luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac
+                    consectetur
+                    ac, vestibulum at eros.
+                </p>
+                <h5>Sub-heading</h5>
+                <p>
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <p>
+                    Example code block
+                </p>
+                <p>
+                    Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+                </p>
+                <h5>Sub-heading</h5>
+                <p>
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean
+                    lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce
+                    dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                    amet risus.
+                </p>
+                <ul>
+                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                    <li>Donec id elit non mi porta gravida at eget metus.</li>
+                    <li>Nulla vitae elit libero, a pharetra augue.</li>
+                </ul>
+                <p class="mar-top">
+                    Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+                </p>
+                <ol>
+                    <li>Vestibulum id ligula porta felis euismod semper.</li>
+                    <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                </ol>
+                <p>
+                    Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
+                </p>
+                <h2>Another blog post</h2>
+                <span class="text-grey">December 23, 2013 by</span> <a href="" class="text-blue">Jacob</a>
+                <p class="mar-top">
+                    Cum sociis natoque penatibus et magnis <a href="" class="text-blue">dis parturient montes</a>,
+                    nascetur ridiculus mus. Aenean eu
+                    leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est
+                    at lobortis. Cras mattis consectetur purus sit amet fermentum.
+                </p>
+                <p>
+                    Curabitur blandit tempus porttitor. <span class="text-black">Nullam quis risus eget urna
+                        mollis</span> ornare vel eu leo. Nullam id
+                    dolor id nibh ultricies vehicula ut id elit.
+                </p>
+                <p>
+                    Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet
+                    fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                </p>
+                <p>
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo
+                    luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac
+                    consectetur ac, vestibulum at eros.
+                </p>
+                <h2>New feature</h2>
+                <span class="text-grey">December 14, 2013 by</span> <a href="" class="text-blue">Chris</a>
+                <p class="mar-top">
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean
+                    lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce
+                    dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                    amet risus.
+                </p>
+                <ul>
+                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                    <li>Donec id elit non mi porta gravida at eget metus.</li>
+                    <li>Nulla vitae elit libero, a pharetra augue.</li>
+                </ul>
+                <p class="mar-top">
+                    Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet
+                    fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                </p>
+                <p>
+                    Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+                </p>
+                <button class="btn_active">older</button>
+                <button>Newer</button>
+            </section>
+            <section class="blog_postsec2">
+                <article class="about_boxsection">
+                    <h3>About</h3>
+                    <p>
+                        Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet
+                        fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                    </p>
+                </article>
+                <article class="archive_sec">
+                    <h3>Archives</h3>
+                    <article><a href="">March 2014</a></article>
+                    <article><a href="">February 2014</a></article>
+                    <article><a href="">January 2014</a></article>
+                    <article><a href="">December 2013</a></article>
+                    <article><a href="">November 2013</a></article>
+                    <article><a href="">October 2013</a></article>
+                    <article><a href="">September 2013</a></article>
+                    <article><a href="">August 2013</a></article>
+                    <article><a href="">July 2013</a></article>
+                    <article><a href="">June 2013</a></article>
+                    <article><a href="">May 2013</a></article>
+                    <article><a href="">April 2013</a></article>
+                </article>
+                <article class="Elsewhere_sec">
+                    <h3>Elsewhere</h3>
+                    <article><a href="">GitHub</a></article>
+                    <article><a href="">Twitter</a></article>
+                    <article><a href="">Facebook</a></article>
+                </article>
+            </section>
+        </summary>
+        <!-- blog post section start here -->
+
+        <section class="clear-both"></section>
+
+        <!-- footer part start -->
+        <footer class="text-center mar-top">
+            <p>
+                Blog Template built for <span class="text-blue">Boostrap</span> by <span class="text-blue">@mdo</span>
+            </p>
+            <p class="text-blue mar-top">
+                Back to top
+            </p>
+        </footer>
+        <!-- footer part end -->
+    </main>
+</body>
+
+</html>

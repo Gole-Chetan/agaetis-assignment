@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Form Validation</title>
+    <style>
+        .container {
+            width: 30%;
+            margin: 15px auto 0px auto;
+            border: 1px solid #ccc;
+            padding: 20px 40px 20px 30px;
+            border-radius: 10px;
+        }
+
+        .inputFields {
+            width: 100%;
+            font-size: 18px;
+            padding: 6px;
+            margin-top: 3px;
+            border: 1px solid grey;
+        }
+
+        label,
+        button:hover {
+            cursor: pointer;
+        }
+
+        input,
+        textarea:focus {
+            outline: none;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: 700;
+            color: #a39c9c
+        }
+
+        .mt-10 {
+            margin-top: 10px;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            background-color: brown;
+            border: none;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        ::placeholder {
+            padding: 4px 6px;
+            font-size: 20px;
+        }
+
+        .text-red {
+            font-weight: bolder;
+            color: red;
+        }
+
+        .border-red {
+            border: 0.5px solid red;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .w-0 {
+            width: 3%;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        ::placeholder {
+            padding: 4px 6px;
+            font-size: 14px;
+        }
+
+        /* ============= */
+        .name_row {
+            display: inline-flex;
+        }
+
+        .w90 {
+            width: 90%;
+        }
+
+        .email_row {
+            margin-top: 20px;
+            margin-left: 0px;
+        }
+
+        #email_heading {
+            margin-top: 20px;
+        }
+
+        .mL20 {
+            margin-left: 20px;
+        }
+
+        span{color:red;font-size: 15px;}
+
+        .mR20{margin-right: 20px;}
+        .fs-7{
+            font-size: 7px;color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <form name="form1" id="form1"  action="" method="post">
+            <h2 class="text-center">Blog Post</h2>
+
+            <label for="txtHeading">Name<sup><i class="fa-solid fa-star-of-life fs-7"></i></sup></label>
+            <article class="name_row">
+                <article class="float-l">
+                    <input type="text" class="w90 inputFields" placeholder="FIRST NAME" name="txtFirstName"
+                        id="txtFirstName" autofocus>
+
+                    <article id="errFirstName"></article>
+                </article>
+                <article class="float-l">
+                    <input type="text" class="w90 inputFields mL20" placeholder="LAST NAME" name="txtLastName"
+                        id="txtLastName">
+                    <article id="errLastName" class="mL20"></article>
+                </article>
+            </article>
+
+
+            <article class="email_row">
+                <label for="email" id="email_heading">Email<sup><i class="fa-solid fa-star-of-life fs-7"></i></sup></label>
+                <article>
+                    <input type="text" class="inputFields" placeholder="EMAIL" name="txtEmail" id="txtEmail">
+                    <article id="errEmail"></article>
+                </article>
+            </article>
+
+            <article style="margin-top: 20px;">
+                <label id="radio-heading" class="mR20">Publish<sup><i class="fa-solid fa-star-of-life fs-7"></i></sup></label>
+                <input type="radio" name="rdpublish" id="private" value="private">
+                <label for="private" class="mR20">Private</label>
+
+                <input type="radio" name="rdpublish" id="public" value="public">
+                <label for="public">Public</label>
+
+                <article id="errPublish"></article>
+            </article>
+            <article class="mt-20">
+                <label for="txtHeading">Heading<sup><i class="fa-solid fa-star-of-life fs-7"></i></sup></label>
+                <input type="text" name="txtHeading" id="txtHeading" class="inputFields" autofocus>
+                <article id="errorMessage1"></article>
+            </article>
+
+            <article class="mt-20">
+                <label for="txtSubHeading1">Sub-Heading<sup><i class="fa-solid fa-star-of-life fs-7"></i></sup></label>
+                <input type="text" name="txtSubHeading1" id="txtSubHeading1" class="inputFields">
+                <article id="errorMessage2"></article>
+
+                <textarea id="textareaHeading1" placeholder="Sub-Heading-1 Description" name="textareaHeading1"
+                    class="mt-20 inputFields" maxlength="50" rows="4"></textarea>
+                <article id="errorMessage3"></article>
+            </article>           
+
+            <article class="text-center">
+                <button id="btnSubmit" class="submitButton" type="button">submit</button>
+            </article>
+        </form>
+    </main>
+
+    <script>
+        "use strict";
+        onload = function () {
+            // button click event in submit button            
+            let sButton = document.querySelector("#btnSubmit");
+            sButton.addEventListener("click", function () {
+                validation();
+            });
+
+        }
+        // Made common function for each fields
+        function validateInputField(InputId, errorMessageId, errorMessage) {
+            let sInput = document.querySelector(InputId);
+            if (sInput.value == "" || sInput.value.trim() == "") {
+                sInput.focus();
+                sInput.classList.add("border-red");
+                document.querySelector(errorMessageId).innerHTML = errorMessage;
+                document.querySelector(errorMessageId).classList.add("text-red");
+                return false;
+            } else {
+                sInput.classList.remove("border-red");
+                document.querySelector(errorMessageId).innerHTML = "";
+                document.querySelector(errorMessageId).classList.remove("text-red");
+                return true;
+            }
+        }
+
+        function displayEmailErrorMsg(InputId, errorMessageId) {
+            let sInput = document.querySelector(InputId);
+            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (sInput.value == "" || sInput.value.trim() == "") {
+                sInput.focus();
+                sInput.classList.add("border-red");
+                document.querySelector(errorMessageId).innerHTML = "Please enter email address";
+                document.querySelector(errorMessageId).classList.add("text-red");
+                return false;
+            }
+            else if (!sInput.value.match(mailformat)) {
+                sInput.focus();
+                sInput.classList.add("border-red");
+                document.querySelector(errorMessageId).innerHTML = "Please enter valid email";
+                document.querySelector(errorMessageId).classList.add("text-red");
+                return false;
+            }
+            else {
+                sInput.classList.remove("border-red");
+                document.querySelector(errorMessageId).innerHTML = "";
+                document.querySelector(errorMessageId).classList.remove("text-red");
+                return true;
+            }
+        }
+
+        // Here made a function which called on line no 133
+        function validation() {
+            if (validateInputField("#txtFirstName", "#errFirstName", "Please enter first name")) {
+                if (validateInputField("#txtLastName", "#errLastName", "Please enter last name")) {
+                    if (displayEmailErrorMsg("#txtEmail", "#errEmail")) {
+                        if (validateRadio("#errPublish","Please select publish option")) {
+                            if (validateInputField("#txtHeading", "#errorMessage1", "Please enter heading")) {
+                                if (validateInputField("#txtSubHeading1", "#errorMessage2", "Please enter sub-heading1")) {
+                                    if (validateInputField("#textareaHeading1", "#errorMessage3", "Please write sub-heading1 information")) {
+                                        document.querySelector("#form1").submit();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function validateRadio(errorMessageId,errorMessage) {
+            
+            let sSelectedRadio = document.querySelector("input[type='radio']:checked");
+            
+            if (sSelectedRadio != null) {
+                document.querySelector(errorMessageId).innerHTML = "";
+                document.querySelector(errorMessageId).classList.remove("text-red");
+                return true;
+            }
+            else {
+                document.querySelector(errorMessageId).innerHTML = errorMessage;
+                document.querySelector(errorMessageId).classList.add("text-red");
+                return false;
+            }            
+        }
+    </script>
+</body>
+</html>
